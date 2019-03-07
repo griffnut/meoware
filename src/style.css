@@ -1,0 +1,106 @@
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 12px;
+}
+
+/****** OVERALL CHATBOX DISPLAY ******/
+#chatbox-container {
+  width: 200px;
+  height: 265px;
+  background-color: #ffffff;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/******** MESSAGE BOX DISPLAY ********/
+#message-container {
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  flex-flow: column;
+  align-content: flex-start;
+  flex: 1;
+}
+
+/********* MESSAGE SCROLLBAR *********/
+::-webkit-scrollbar {
+  width: 10px;
+  height: fit-content;
+}
+
+::-webkit-scrollbar-track {
+  background: none; 
+}
+
+::-webkit-scrollbar-thumb {
+  height: 15px;
+  background: #cccccc; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999999; 
+}
+
+/******** INDIVIDUAL MESSAGES ********/
+
+.message-catbot {
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 15px 10px 0;
+  position: relative;
+  border-radius: 5px 5px 5px 0;
+  background-color: #8b6be2;
+  align-self: flex-start;
+}
+
+.message-duckbot {
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 15px 10px 0;
+  position: relative;
+  border-radius: 5px 5px 5px 0;
+  background-color: #ffcc3e;
+  align-self: flex-start;
+}
+
+.message-user {
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 0 10px 15px;
+  position: relative;
+  border-radius: 5px 5px 0 5px;
+  background-color: #ff7da8;
+  align-self: flex-end;
+}
+
+/******** INPUT BOX CONTAINER ********/
+#input-container {
+  display: flex;
+  border: 1px solid #a7afc8;
+  flex-flow: row;
+}
+
+#input-container input {
+  border: none;
+  padding: 5px;
+  flex: 3;
+}
+
+#input-container input:forcus {
+  border: none;
+}
+
+#input-container button {
+  border: none;
+  background-color: #74d1ee;
+  color: #fff;
+  transition: .5s;
+  flex: 1;
+}
+
+#input-container button:hover {
+  background-color: #87e8f1;
+  flex: 1;
+}
