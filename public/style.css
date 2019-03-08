@@ -50,7 +50,7 @@
   padding: 5px 10px;
   margin: 0 15px 10px 0;
   position: relative;
-  border-radius: 5px 5px 5px 0;
+  border-radius: 10px 10px 10px 0;
   background-color: #8b6be2;
   align-self: flex-start;
 }
@@ -60,8 +60,8 @@
   padding: 5px 10px;
   margin: 0 15px 10px 0;
   position: relative;
-  border-radius: 5px 5px 5px 0;
-  background-color: #ffcc3e;
+  border-radius: 10px 10px 10px 0;
+  background-color: #ffb53e;
   align-self: flex-start;
 }
 
@@ -70,7 +70,7 @@
   padding: 5px 10px;
   margin: 0 0 10px 15px;
   position: relative;
-  border-radius: 5px 5px 0 5px;
+  border-radius: 10px 10px 0 10px;
   background-color: #ff7da8;
   align-self: flex-end;
 }
