@@ -1,6 +1,8 @@
 * {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 /****** OVERALL CHATBOX DISPLAY ******/
@@ -22,6 +24,7 @@
   flex-flow: column;
   align-content: flex-start;
   flex: 1;
+  -webkit-app-region: drag;
 }
 
 /********* MESSAGE SCROLLBAR *********/
@@ -52,6 +55,7 @@
   position: relative;
   border-radius: 10px 10px 10px 0;
   background-color: #8b6be2;
+  word-break: break-all;
   align-self: flex-start;
 }
 
@@ -62,6 +66,7 @@
   position: relative;
   border-radius: 10px 10px 10px 0;
   background-color: #ffb53e;
+  word-break: break-all;
   align-self: flex-start;
 }
 
@@ -72,6 +77,7 @@
   position: relative;
   border-radius: 10px 10px 0 10px;
   background-color: #ff7da8;
+  word-break: break-all;
   align-self: flex-end;
 }
 
@@ -85,6 +91,7 @@
 #input-container input {
   border: none;
   padding: 5px;
+  word-break: break-all;
   flex: 3;
 }
 
@@ -103,4 +110,13 @@
 #input-container button:hover {
   background-color: #87e8f1;
   flex: 1;
+}
+
+/*********** CAT CONTAINER ***********/
+#cat {
+  background-image: url('./images/griff.png');
+  background-repeat: no-repeat;
+  background-size: 105px 103px;
+  width: 105px;
+  height: 103px;
 }
