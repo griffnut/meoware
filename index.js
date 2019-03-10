@@ -1,46 +1,48 @@
-import { app, BrowserWindow } from 'electron';
+import { app, screen, BrowserWindow } from 'electron';
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 import { enableLiveReload } from 'electron-compile';
-import localShortcut from 'electron-localshortcut';
-// var Mousetrap = require('mousetrap');
-// import keyboardJS from 'keyboardjs';
+import windowManager from 'electron-window-manager';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow;
-let attackWin;
+let duckWindow;
+let catWindow;
 
 const isDevMode = process.execPath.match(/[\\/]electron/);
 
 if (isDevMode) enableLiveReload({ strategy: 'react-hmr' });
 
 let createWindow = async () => {
+  const coord = screen.getPrimaryDisplay().size
+  const x = coord.width - 150
+  const y = coord.height - 150
+
   // Create the browser window.
-  mainWindow = new BrowserWindow({
-    x: 0,
-    y: 0,
-    width: 210,
-    height: 205,
+  catWindow = new BrowserWindow({
+    x: x,
+    y: y,
+    width: 114,
+    height: 126,
     alwaysOnTop: true,
     transparent: true,
     frame: false
-  });
+  })
 
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  catWindow.loadURL(`file://${__dirname}/public/cat.html`);
 
   // Open the DevTools.
   // if (isDevMode) {
   //   await installExtension(REACT_DEVELOPER_TOOLS);
-  //   mainWindow.webContents.openDevTools();
+  //   catWindow.webContents.openDevTools();
   // }
 
   // Emitted when the window is closed.
-  mainWindow.on('closed', () => {
+  catWindow.on('closed', () => {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    mainWindow = null;
+    catWindow = null;
   });
 };
 
@@ -61,60 +63,10 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) {
+  if (catWindow === null) {
     createWindow();
   }
 });
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
-
-app.on('ready', () => {
-  // console.log(Mousetrap)
-  // Mousetrap.bind('w', () => {
-  //   const coord = mainWindow.getPosition()
-  //   const x = coord[0]
-  //   const y = coord[1] - 10
-
-  //   mainWindow.setPosition(x, y)
-  // })
-  // keyboardJS.bind('w', e => {
-  //   console.log('w')
-  // })
-
-  // window.addEventListener('w', e => {
-  //   console.log('w')
-  // }, true)
-
-  localShortcut.register(mainWindow, 'W', () => {
-    const coord = mainWindow.getPosition()
-    const x = coord[0]
-    const y = coord[1] - 10
-
-    mainWindow.setPosition(x, y)
-  })
-
-  localShortcut.register(mainWindow, 'A', () => {
-    const coord = mainWindow.getPosition()
-    const x = coord[0] - 10
-    const y = coord[1]
-
-    mainWindow.setPosition(x, y)
-  })
-
-  localShortcut.register(mainWindow, 'S', () => {
-    const coord = mainWindow.getPosition()
-    const x = coord[0]
-    const y = coord[1] + 10
-
-    mainWindow.setPosition(x, y)
-  })
-
-  localShortcut.register(mainWindow, 'D', () => {
-    const coord = mainWindow.getPosition()
-    const x = coord[0] + 10
-    const y = coord[1]
-
-    mainWindow.setPosition(x, y)
-  })
-})

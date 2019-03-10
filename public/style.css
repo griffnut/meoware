@@ -5,15 +5,61 @@
   padding: 0;
 }
 
+button {
+  border: none;
+  background: none;
+}
+
+button:focus, input:focus {
+  outline: none;
+}
+
 /****** OVERALL CHATBOX DISPLAY ******/
 #chatbox-container {
   width: 200px;
   height: 265px;
+  opacity: .5;
   background-color: #ffffff;
-  border-radius: 5px 5px 0 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: .5s;
+}
+
+#chatbox-container:hover {
+  opacity: 1;
+}
+
+/************* TITLE BAR *************/
+#title-bar {
+  display: flex;
+  justify-content: flex-end;
+  -webkit-app-region: drag;
+  background-color: #796099;
+}
+
+#title-bar .min {
+  -webkit-app-region: no-drag;
+  padding: 2px 5px;
+  color: #cccccc;
+  transition: .5s;
+}
+
+#title-bar .min:hover {
+  background-color: #9b7fbb;
+  color: #eeeeee;
+}
+
+#title-bar .close {
+  -webkit-app-region: no-drag;
+  padding: 2px 5px;
+  color: #cccccc;
+  transition: .5s;
+}
+
+#title-bar .close:hover {
+  background-color: #f35e7e;
+  color: #ffd4d4;
 }
 
 /******** MESSAGE BOX DISPLAY ********/
@@ -24,7 +70,6 @@
   flex-flow: column;
   align-content: flex-start;
   flex: 1;
-  -webkit-app-region: drag;
 }
 
 /********* MESSAGE SCROLLBAR *********/
@@ -55,7 +100,7 @@
   position: relative;
   border-radius: 10px 10px 10px 0;
   background-color: #8b6be2;
-  word-break: break-all;
+  word-wrap: break-word;
   align-self: flex-start;
 }
 
@@ -66,7 +111,7 @@
   position: relative;
   border-radius: 10px 10px 10px 0;
   background-color: #ffb53e;
-  word-break: break-all;
+  word-wrap: break-word;
   align-self: flex-start;
 }
 
@@ -77,7 +122,7 @@
   position: relative;
   border-radius: 10px 10px 0 10px;
   background-color: #ff7da8;
-  word-break: break-all;
+  word-wrap: break-word;
   align-self: flex-end;
 }
 
@@ -91,16 +136,12 @@
 #input-container input {
   border: none;
   padding: 5px;
+  background: none;
   word-break: break-all;
   flex: 3;
 }
 
-#input-container input:forcus {
-  border: none;
-}
-
 #input-container button {
-  border: none;
   background-color: #74d1ee;
   color: #fff;
   transition: .5s;
@@ -108,15 +149,99 @@
 }
 
 #input-container button:hover {
-  background-color: #87e8f1;
+  background-color: #6fa9eb;
   flex: 1;
 }
 
-/*********** CAT CONTAINER ***********/
+/********* ANIMAL CONTAINER **********/
+#cat-duck {
+  background-image: url('./images/griff-duck.png');
+  background-repeat: no-repeat;
+  background-size: 114px 126px;
+  width: 114px;
+  height: 126px;
+}
+
 #cat {
   background-image: url('./images/griff.png');
   background-repeat: no-repeat;
-  background-size: 105px 103px;
-  width: 105px;
-  height: 103px;
+  background-size: 114px 120px;
+  width: 114px;
+  height: 126px;
+}
+
+#cat:hover {
+  cursor: grab;
+}
+
+#lducky {
+  background-image: url('./images/lducky.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 44px 42px;
+  width: 44px;
+  height: 42px;
+}
+
+#lducky-walk {
+  background-image: url('./images/lducky.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 44px 42px;
+  width: 44px;
+  height: 42px;
+}
+
+#rducky {
+  background-image: url('./images/rducky.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 44px 42px;
+  width: 44px;
+  height: 42px;
+}
+
+#rducky-walk {
+  background-image: url('./images/rducky.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 44px 42px;
+  width: 44px;
+  height: 42px;
+}
+
+#fducky {
+  background-image: url('./images/fducky.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 39px;
+  width: 44px;
+  height: 42px;
+}
+
+#fducky-walk {
+  background-image: url('./images/fducky.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 40px;
+  width: 44px;
+  height: 42px;
+}
+
+#bducky {
+  background-image: url('./images/bducky.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 39px;
+  width: 44px;
+  height: 42px;
+}
+
+#bducky-walk {
+  background-image: url('./images/bducky.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 40px;
+  width: 44px;
+  height: 42px;
 }

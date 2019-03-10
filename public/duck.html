@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="./public/style.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div id="App" />
+  <div id="Duck" />
 </body>
 
 <script type="text/jsx">
@@ -14,8 +14,8 @@ import ReactDOM from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
 
 const render = () => {
-  const App = require('./client/components/app').default;
-  ReactDOM.render(<AppContainer><App /></AppContainer>, document.getElementById('App'));
+  const Duck = require('../client/components/duck').default;
+  ReactDOM.render(<AppContainer><Duck /></AppContainer>, document.getElementById('Duck'));
 }
 
 render();

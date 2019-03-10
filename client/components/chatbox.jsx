@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
+import { remote } from 'electron'
 
-export default class ChtApp extends React.Component {
+export default class Chatbox extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -30,6 +31,16 @@ export default class ChtApp extends React.Component {
     })
   }
 
+  handleButtons(name) {
+    if (name === 'min') {
+      const win = remote.getFocusedWindow()
+      win.minimize()
+    } else if (name === 'close') {
+      const win = remote.getFocusedWindow()
+      win.close()
+    }
+  }
+
   scrollToBottom() {
     this.el.scrollIntoView(false)
   }
@@ -37,12 +48,19 @@ export default class ChtApp extends React.Component {
   render() {
     return (
       <div id = 'chatbox-container'>
+        <div id = 'title-bar'>
+          <button type = 'button' className = 'min'>-</button>
+          <button type='button' className = 'close'>x</button>
+        </div>
         <div id ='message-container'>
-          <div className = 'message-catbot'>
-            Hello, world! (ΦωΦ)
+          <div className = 'message-duckbot'>
+            (☌⌔☌) i wuv u !!!!!
+          </div>
+          <div className='message-catbot'>
+            (ΦωΦ) enjoy talking to yourself lol
           </div>
           <div className='message-duckbot'>
-            Hello, world. (•⌔•)
+            (•́⌔•̀) we iz sry
           </div>
           {this.state.messages.map((message, idx) => (
             <div className = 'message-user' key = {idx}>
