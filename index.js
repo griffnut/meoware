@@ -5,7 +5,6 @@ import windowManager from 'electron-window-manager';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let duckWindow;
 let catWindow;
 
 const isDevMode = process.execPath.match(/[\\/]electron/);
@@ -22,9 +21,10 @@ let createWindow = async () => {
     x: x,
     y: y,
     width: 114,
-    height: 126,
+    height: 144,
     alwaysOnTop: true,
     transparent: true,
+    resizable: false,
     frame: false
   })
 

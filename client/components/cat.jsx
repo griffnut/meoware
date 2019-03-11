@@ -1,17 +1,31 @@
 import React from 'react';
 import path from 'path'
 import { remote } from 'electron'
-const { Menu, MenuItem } = remote
+const { Menu, MenuItem, BrowserWindow } = remote
 var windowManager = remote.require('electron-window-manager')
 
 export default class Cat extends React.Component {
   constructor() {
     super()
     this.state = {
-      cat: 'cat-duck'
+      cat: 'cat',
+      canHold: false
     }
 
     this.contextMenu = this.contextMenu.bind(this)
+    this.action = this.action.bind(this)
+    this.stopAction = this.stopAction.bind(this)
+    this.handleButtons = this.handleButtons.bind(this)
+  }
+
+  action() {
+    this.setState({cat: 'cat-pet'})
+  }
+
+  stopAction() {
+    this.setState({
+      cat: 'cat'
+    })
   }
 
   contextMenu(e) {
@@ -52,9 +66,28 @@ export default class Cat extends React.Component {
     menu.popup()
   }
 
+  handleButtons(evt) {
+    const name = evt.target.name
+
+    if (name === 'min') {
+      const win = BrowserWindow.getFocusedWindow()
+      win.minimize()
+    } else if (name === 'close') {
+      const win = BrowserWindow.getFocusedWindow()
+      win.close()
+    }
+  }
+
   render() {
     return (
-      <div id='cat' onContextMenu = {this.contextMenu} />
+      <div>
+        <div id='title-bar'>
+          <button type='button' name='min' className='min' onClick={this.handleButtons} >-</button>
+          <button type='button' name='close' className='close' onClick={this.handleButtons} >x</button>
+        </div>
+        <div id={this.state.cat} onContextMenu={this.contextMenu} onMouseDown={this.action} onMouseUp={this.stopAction}>
+        </div>
+      </div>
     )
   }
 }

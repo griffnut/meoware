@@ -18,20 +18,21 @@ button:focus, input:focus {
 #chatbox-container {
   width: 200px;
   height: 265px;
-  opacity: .5;
   background-color: #ffffff;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: .5s;
 }
-
-#chatbox-container:hover {
-  opacity: 1;
-}
-
 /************* TITLE BAR *************/
 #title-bar {
+  display: flex;
+  justify-content: flex-end;
+  -webkit-app-region: drag;
+  background-color: #7960998a;
+}
+
+#chatbox-container #title-bar {
   display: flex;
   justify-content: flex-end;
   -webkit-app-region: drag;
@@ -70,6 +71,11 @@ button:focus, input:focus {
   flex-flow: column;
   align-content: flex-start;
   flex: 1;
+}
+
+#bot-is-typing {
+  color: #8b6be2;
+  height: 13px;
 }
 
 /********* MESSAGE SCROLLBAR *********/
@@ -172,6 +178,25 @@ button:focus, input:focus {
 
 #cat:hover {
   cursor: grab;
+}
+
+#cat-pet {
+  background-image: url('./images/griff-pet.gif');
+  background-repeat: no-repeat;
+  background-size: 114px 120px;
+  width: 114px;
+  height: 126px;
+  cursor: grab;
+}
+
+#cat-carry {
+  background-image: url('./images/griff-carry.png');
+  background-repeat: no-repeat;
+  background-size: 114px 120px;
+  -webkit-app-region: drag;
+  width: 114px;
+  height: 126px;
+  cursor: hidden;
 }
 
 #lducky {
