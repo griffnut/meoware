@@ -30,8 +30,8 @@ All stay on top of your windows unless minimized or closed out.
 
 ## Built With
 **Framework**
-* [Electron] (https://electronjs.org/)
+* [Electron](https://electronjs.org/)
 
 **Node Modules**
-* [Mousetrap] (https://github.com/ccampbell/mousetrap)
-* [Electron-Window-Manager] (https://github.com/TamkeenLMS/electron-window-manager)
+* [Mousetrap](https://github.com/ccampbell/mousetrap)
+* [Electron-Window-Manager](https://github.com/TamkeenLMS/electron-window-manager)
