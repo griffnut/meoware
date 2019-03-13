@@ -75,6 +75,10 @@ export default class Cat extends React.Component {
     } else if (name === 'close') {
       const win = BrowserWindow.getFocusedWindow()
       win.close()
+    } else if (name === 'carry') {
+      this.setState({cat: 'cat-carry', canHold: true})
+    } else if (name === 'pet') {
+      this.setState({cat: 'cat', canHold: false})
     }
   }
 
@@ -82,6 +86,11 @@ export default class Cat extends React.Component {
     return (
       <div>
         <div id='title-bar'>
+        {/* {
+          this.state.canHold
+          ? <button type='button' name='pet' className='min' onClick={this.handleButtons} >pet</button>
+          : <button type='button' name='carry' className='min' onClick={this.handleButtons} >carry</button>
+        } */}
           <button type='button' name='min' className='min' onClick={this.handleButtons} >-</button>
           <button type='button' name='close' className='close' onClick={this.handleButtons} >x</button>
         </div>

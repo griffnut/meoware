@@ -42,25 +42,25 @@ button:focus, input:focus {
 #title-bar .min {
   -webkit-app-region: no-drag;
   padding: 2px 5px;
-  color: #cccccc;
+  color: #fff;
   transition: .5s;
 }
 
 #title-bar .min:hover {
   background-color: #9b7fbb;
-  color: #eeeeee;
+  color: #fff;
 }
 
 #title-bar .close {
   -webkit-app-region: no-drag;
   padding: 2px 5px;
-  color: #cccccc;
+  color: #fff;
   transition: .5s;
 }
 
 #title-bar .close:hover {
   background-color: #f35e7e;
-  color: #ffd4d4;
+  color: #fff;
 }
 
 /******** MESSAGE BOX DISPLAY ********/
