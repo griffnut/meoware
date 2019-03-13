@@ -1,5 +1,4 @@
 import React from 'react'
-// import { remote } from 'electron'
 const { BrowserWindow } = require('electron').remote
 
 export default class Chatbox extends React.Component {
