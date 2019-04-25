@@ -41,6 +41,7 @@ button:focus, input:focus {
 
 #title-bar .min {
   -webkit-app-region: no-drag;
+  user-select: none;
   padding: 2px 5px;
   color: #fff;
   transition: .5s;
@@ -53,6 +54,7 @@ button:focus, input:focus {
 
 #title-bar .close {
   -webkit-app-region: no-drag;
+  user-select: none;
   padding: 2px 5px;
   color: #fff;
   transition: .5s;
@@ -160,17 +162,10 @@ button:focus, input:focus {
 }
 
 /********* ANIMAL CONTAINER **********/
-#cat-duck {
-  background-image: url('./images/griff-duck.png');
-  background-repeat: no-repeat;
-  background-size: 114px 126px;
-  width: 114px;
-  height: 126px;
-}
-
 #cat {
   background-image: url('./images/griff.png');
   background-repeat: no-repeat;
+  background-position: center;
   background-size: 114px 120px;
   width: 114px;
   height: 126px;
@@ -180,93 +175,11 @@ button:focus, input:focus {
   cursor: grab;
 }
 
-#cat-pet {
-  background-image: url('./images/griff-pet.gif');
-  background-repeat: no-repeat;
-  background-size: 114px 120px;
-  width: 114px;
-  height: 126px;
-  cursor: grab;
-}
-
-#cat-carry {
-  background-image: url('./images/griff-carry.png');
-  background-repeat: no-repeat;
-  background-size: 114px 120px;
-  -webkit-app-region: drag;
-  width: 114px;
-  height: 126px;
-  cursor: hidden;
-}
-
-#lducky {
+#ducky {
   background-image: url('./images/lducky.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 44px 42px;
-  width: 44px;
-  height: 42px;
-}
-
-#lducky-walk {
-  background-image: url('./images/lducky.gif');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 44px 42px;
-  width: 44px;
-  height: 42px;
-}
-
-#rducky {
-  background-image: url('./images/rducky.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 44px 42px;
-  width: 44px;
-  height: 42px;
-}
-
-#rducky-walk {
-  background-image: url('./images/rducky.gif');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 44px 42px;
-  width: 44px;
-  height: 42px;
-}
-
-#fducky {
-  background-image: url('./images/fducky.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 30px 39px;
-  width: 44px;
-  height: 42px;
-}
-
-#fducky-walk {
-  background-image: url('./images/fducky.gif');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 30px 40px;
-  width: 44px;
-  height: 42px;
-}
-
-#bducky {
-  background-image: url('./images/bducky.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 30px 39px;
-  width: 44px;
-  height: 42px;
-}
-
-#bducky-walk {
-  background-image: url('./images/bducky.gif');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 30px 40px;
   width: 44px;
   height: 42px;
 }

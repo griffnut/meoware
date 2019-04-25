@@ -7,7 +7,7 @@ export default class Duck extends React.Component {
   constructor() {
     super()
     this.state = {
-      ducky: 'lducky'
+      ducky: ''
     }
 
     this.contextMenu = this.contextMenu.bind(this)
@@ -38,8 +38,10 @@ export default class Duck extends React.Component {
 
   move(moveX, moveY, dir) {
     const duckWindow = remote.getCurrentWindow()
-
-    this.setState({ ducky: `${dir}-walk` })
+    const ducky = document.getElementById('ducky')
+    
+    ducky.style.background = `url('./images/${dir}.gif') no-repeat`
+    this.setState({ ducky: dir })
     const coord = duckWindow.getPosition()
     const x = coord[0] + moveX
     const y = coord[1] + moveY
@@ -47,8 +49,12 @@ export default class Duck extends React.Component {
     duckWindow.setPosition(x, y)
   }
 
-  stop(name) {
-    if (this.state.ducky === `${name}-walk`) this.setState({ ducky: name })
+  stop(dir) {
+    const ducky = document.getElementById('ducky')
+    
+    if (this.state.ducky === `${dir}`) {
+      ducky.style.background = `url('./images/${dir}.png') no-repeat`
+    }
   }
 
   contextMenu(e) {
@@ -68,7 +74,7 @@ export default class Duck extends React.Component {
 
   render() {
     return (
-      <div id = {this.state.ducky} onContextMenu = {this.contextMenu} />
+      <div id = 'ducky' onContextMenu = {this.contextMenu} />
     )
   }
 }

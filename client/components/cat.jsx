@@ -19,13 +19,13 @@ export default class Cat extends React.Component {
   }
 
   action() {
-    this.setState({cat: 'cat-pet'})
+    const cat = document.getElementById('cat')
+    cat.style.background = "url('./images/griff-pet.gif') center no-repeat"
   }
 
   stopAction() {
-    this.setState({
-      cat: 'cat'
-    })
+    const cat = document.getElementById('cat')
+    cat.style.background = "url('./images/griff.png') center no-repeat"
   }
 
   contextMenu(e) {
@@ -39,6 +39,7 @@ export default class Cat extends React.Component {
       'resizable': false,
       'frame': false
     }
+    
     const chatWindow = {
       'width': 200,
       'height': 265,
@@ -52,14 +53,14 @@ export default class Cat extends React.Component {
     menu.append(new MenuItem({ 
       label: 'duck', 
       click() { 
-        windowManager.createNew('duck', 'duck', `file://${filePath}/public/duck.html`, false, duckWindow, false).open()
+        windowManager.open('duck', 'duck', `file://${filePath}/public/duck.html`, false, duckWindow, false)
       } 
     }))
 
      menu.append(new MenuItem({ 
        label: 'chat', 
        click() {
-         windowManager.createNew('chatbox', 'chatbox', `file://${filePath}/public/chatbox.html`, false, chatWindow, false).open()
+         windowManager.open('chatbox', 'chatbox', `file://${filePath}/public/chatbox.html`, false, chatWindow, false)
        }
     }))
 
@@ -75,26 +76,17 @@ export default class Cat extends React.Component {
     } else if (name === 'close') {
       const win = BrowserWindow.getFocusedWindow()
       win.close()
-    } else if (name === 'carry') {
-      this.setState({cat: 'cat-carry', canHold: true})
-    } else if (name === 'pet') {
-      this.setState({cat: 'cat', canHold: false})
-    }
+    } 
   }
 
   render() {
     return (
       <div>
         <div id='title-bar'>
-        {/* {
-          this.state.canHold
-          ? <button type='button' name='pet' className='min' onClick={this.handleButtons} >pet</button>
-          : <button type='button' name='carry' className='min' onClick={this.handleButtons} >carry</button>
-        } */}
-          <button type='button' name='min' className='min' onClick={this.handleButtons} >-</button>
-          <button type='button' name='close' className='close' onClick={this.handleButtons} >x</button>
+          <button type = 'button' name = 'min' className = 'min' onClick = {this.handleButtons} >-</button>
+          <button type = 'button' name = 'close' className = 'close' onClick = {this.handleButtons} >x</button>
         </div>
-        <div id={this.state.cat} onContextMenu={this.contextMenu} onMouseDown={this.action} onMouseUp={this.stopAction}>
+        <div id = 'cat' onContextMenu = {this.contextMenu} onMouseDown = {this.action} onMouseUp = {this.stopAction}>
         </div>
       </div>
     )
