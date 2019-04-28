@@ -11,6 +11,7 @@ export default class Chatbox extends React.Component {
       duck: null
     }
 
+    
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.scrollToBottom = this.scrollToBottom.bind(this)
@@ -22,9 +23,11 @@ export default class Chatbox extends React.Component {
   }
 
   handleChange(evt) {
+    clearTimeout(this.state.annoying)
+
     this.setState({
       text: evt.target.value,
-      annoying: setTimeout(() => this.setState({annoying: null}), 5000)
+      annoying: setTimeout(() => this.setState({annoying: null}), 1500)
     })
   }
 
